@@ -1,0 +1,52 @@
+<div class="container" [class.active]="isActive">
+  <!-- Section Sign In -->
+  <div class="form-container sign-in">
+    <form (ngSubmit)="onLoginSubmit()">
+      <h2>Se Connecter</h2>
+      <div class="social-icons">
+        <!-- Vos icônes sociales ici -->
+      </div>
+      <input type="email" id="email" name="email" placeholder="email" [(ngModel)]="requestPayload.email" required>
+      <input type="password" id="Password" name="Password" placeholder="Password" [(ngModel)]="requestPayload.password"
+        required>
+      <a href="#">Mot de passe oublié ?</a>
+      <button mat-raised-button type="submit">Se Connecter</button>
+    </form>
+  </div>
+
+  <!-- Section Sign Up -->
+  <div class="form-container sign-up">
+    <form (ngSubmit)="onRegisterSubmit()">
+      <h2>Créer un nouveau compte</h2>
+      <input type="text" id="firstname" name="firstname" placeholder="firstName"
+        [(ngModel)]="requestPayloadRegister.firstName" required>
+      <input type="text" id="lastname" name="lastname" placeholder="lastName"
+        [(ngModel)]="requestPayloadRegister.lastName" required>
+
+      <input type="email" id="email" name="email" placeholder="Email" [(ngModel)]="requestPayloadRegister.email"
+        required>
+      <!-- <input type="text" id="role" name="role" placeholder="Role" [(ngModel)]="requestPayloadRegister.role" required> -->
+
+      <input type="password" id="password" name="password" placeholder="Mot de passe"
+        [(ngModel)]="requestPayloadRegister.password" required>
+      <!-- <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmer le mot de passe" [(ngModel)]="formData.confirm_password" required> -->
+      <button mat-raised-button type="submit">S'inscrire</button>
+    </form>
+  </div>
+
+  <!-- Toggle Panels -->
+  <div class="toggle-container">
+    <div class="toggle">
+      <div class="toggle-panel toggle-left">
+        <h1>Bienvenue</h1>
+        <p>Inscrivez-vous avec vos informations personnelles</p>
+        <button (click)="toggleActive()" mat-raised-button type="button">Se Connecter</button>
+      </div>
+      <div class="toggle-panel toggle-right">
+        <h1>Bienvenue!</h1>
+        <p>Vous n'avez pas de compte ?</p>
+        <button (click)="toggleActive()" mat-raised-button type="button">S'inscrire</button>
+      </div>
+    </div>
+  </div>
+</div>
